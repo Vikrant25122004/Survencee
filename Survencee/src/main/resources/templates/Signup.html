@@ -19,12 +19,46 @@
             <div id="loginpage">
                 <h2 id="signup">Signup</h2>
                 <div id="choice">
-                    <button id="surv">Surveyor</button>
-                    <button id="rep">Reporter</button>
+                    <button  onclick="location.href='/public?formType=surveyor'" id="surv">Surveyor</button>
+                    <button onclick="location.href='/public?formType=reporter'" id="rep">Reporter</button>
                 </div>
+                <div id="sign">
+                <form th:if="${Surveyor != null}"  role="form" method="post" th:action="@{/public/registersurv}" th:object="${Surveyor}">
+                        <label for="usernamee" >username</label>
+                        <input type="text"  th:field="*{username}" id="usernamee">
+                        <label for="namee"  >name</label>
+                        <input type="text" th:field="*{name}" id="namee">
+                        <label for="emaill"  >Email</label>
+                        <input type="email" th:field="*{email}" id="emaill">
+                        <label for="pass"  >Password</label>
+                        <input type="password" th:field="*{password}" id="pass">
+                        <button  type="Submit" id="Submit"> Submit </button>
+                </form>
+                <form th:if="${Reporter != null}" method="post" th:action="@{/public/registerrep}" th:object="${Reporter}">
+                    <label for="username">Username</label>
+                    <input type="text" th:field="*{repoUsername}" id="username">
+
+                    <label for="name">Name</label>
+                    <input type="text" th:field="*{reporter_name}" id="name">
+
+                    <label for="channel">Channel</label>
+                    <input type="text" th:field="*{channel_name}" id="channel">
+
+                    <label for="email">Email</label>
+                    <input type="email" th:field="*{email}" id="email">
+
+                    <label for="passe">Password</label>
+                    <input type="password" th:field="*{password}" id="passe">
+
+                    <button type="submit" id="Submit">Submit</button>
+                </form>
+
+                </div>
+                
             </div>
         </div>
     </main>
+    <script th:src = "@{/js/signup.js}"></script>
 
 </body>
 </html>
