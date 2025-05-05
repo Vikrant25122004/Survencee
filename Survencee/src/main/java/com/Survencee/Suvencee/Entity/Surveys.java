@@ -6,29 +6,32 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
+@Document(collection = "Survey")
 @Data
-@Document(collection = "Surveyor")
 @AllArgsConstructor
 @NoArgsConstructor
-public class Surveyor {
+public class Surveys {
     @Id
-    private ObjectId SurveyorId;
+    private ObjectId id;
     @NonNull
-    @Indexed(unique = true)
     private String username;
     @NonNull
-    private String name;
+    private String title;
     @NonNull
-    private String email;
+    private ArrayList<String> proofs;
     @NonNull
-    private String password;
-    private String picturename;
-    private String imgurl;
+    private String Surveys;
+    private int likes = 0;
+    private ArrayList<String> like = new ArrayList<>();
+    private HashMap<String, String> comments = new HashMap<>();
+    private int comment =0;
+    private int views = 0;
+
+
 
 }

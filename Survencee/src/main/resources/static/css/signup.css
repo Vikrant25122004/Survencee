@@ -149,3 +149,24 @@ input {
     background-color: beige;
     color: black;
 }
+i{
+    background-color: black;
+    height: 30px;
+    width: 30px;
+}
+a{
+    height: 30px;
+    width: 30px;
+    background-color: black;
+    position: relative;
+    top: 150px;
+    left: 150px;
+}
+#loggg{
+    color: aliceblue;
+    background-color: black;
+    width: 200px;
+    position: relative;
+    left: 150px;
+    top:120px ;
+}

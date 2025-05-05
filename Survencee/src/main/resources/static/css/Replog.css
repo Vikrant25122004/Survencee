@@ -1,0 +1,82 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+
+body{
+
+    background-color: rgb(42, 39, 39);
+
+}
+#navbar{
+    height: 60px;
+    width: 100%;
+    background-color: black;
+}
+#logo{
+    color: aliceblue;
+    font-size: larger;
+    font-style: italic;
+    font-family: cursive;
+    width: 300px;
+    position: relative;
+    left: 5px;
+    top: 3px;
+    
+}
+#loginp{
+    height: 300px;
+    width: 300px;
+    background-color: aliceblue;
+    border-radius: 5% 5% 5% 5%;
+    position: relative;
+    left: 500px;
+    top: 70px;
+}
+#heading{
+    width: 200px;
+    position: relative;
+    left: 60px;
+}
+#form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    height: 250px;
+    position: relative;
+    top: 20px;
+    
+}
+input{
+    width: 150px;
+    height: 20px;
+    align-items: center;
+    position: relative;
+    left: 100px;
+    bottom: 40px;
+    border-top: none;
+    border-left:none;
+    border-right:none;
+    border-bottom-style: solid ;
+}
+label{
+    width: 70px;
+    position: relative;
+    left: 10px;
+    font-size: large;
+}
+button{
+    width: 70px;
+    height: 30px;
+    border: 5% 5% 5% 5%;
+    background-color: grey;
+    position: relative;
+    left: 110px;
+}
+#oo{
+    position: relative;
+    left: 1000px;
+    bottom: 20px;
+}

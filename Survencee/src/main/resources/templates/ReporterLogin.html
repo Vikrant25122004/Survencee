@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/Replog.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+    <div id="navbar">
+        <div id="logo">
+            <h2>Survencee</h2>
+        </div>
+        <a th:href="@{/}" id="oo"><i class="fa-solid fa-user-plus" ></i></a>
+    </div>
+    </header>
+    <main>
+        <div id="loginp">
+            <h2 id = "heading">Login Reporter</h2>
+            <form role="form" th:action="@{/login-Reporter}" method="post" th:object="${Reporter}" id="form">
+                <label for="username" >Username</label>
+                <input type="text" th:field="*{repoUsername}" id="username">
+                <label for="password">Password</label>
+                <input type="password" th:field="*{password}" id="password">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+    
+
+
+</body>
+</html>
