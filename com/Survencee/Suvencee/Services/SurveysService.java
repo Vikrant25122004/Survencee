@@ -84,15 +84,7 @@
 /* 84 */               Map.of("text", question)
 /*    */             })
 /*    */         });
-/*    */ 
-/*    */ 
-/*    */ 
-/*    */ 
-/*    */ 
-/*    */ 
-/*    */ 
-/*    */ 
-/*    */     
+/*    */
 /* 96 */     String response = (String)((WebClient.RequestBodySpec)((WebClient.RequestBodySpec)this.webClient.post().uri(this.geminiapiurl + this.geminiapiurl, new Object[0])).header("Content-Type", new String[] { "application/json" })).bodyValue(requestbody).retrieve().bodyToMono(String.class).block();
 /* 97 */     return response;
 /*    */   }
