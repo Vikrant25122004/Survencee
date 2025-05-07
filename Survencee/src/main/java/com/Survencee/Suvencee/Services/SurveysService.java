@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
-
+import org.springframework.web.reactive.function.client.WebClient;
 import java.util.ArrayList;
 
 @Service
@@ -17,6 +17,8 @@ public class SurveysService {
     private MongoTemplate mongoTemplate;
     @Autowired
     private SurveysRepository surveysRepository;
+     @Autowired
+    private WebClient webClient;
     public ArrayList<Surveys> getallsurveys(){
         ArrayList<Surveys> all = (ArrayList<Surveys>) surveysRepository.findAll();
         return all;
@@ -34,6 +36,17 @@ public class SurveysService {
         ArrayList<Surveys> surveys = (ArrayList<Surveys>) mongoTemplate.find(query,Surveys.class);
         return surveys;
 
+    }
+    public String getans(String question) {
+  Map<String, Object> requestbody = Map.of("contents", new Object[] {
+           
+           Map.of("parts", new Object[] {
+               Map.of("text", question)
+           })
+});
+    
+     String response = (String)((WebClient.RequestBodySpec)((WebClient.RequestBodySpec)this.webClient.post().uri(this.geminiapiurl + this.geminiapiurl, new Object[0])).header("Content-Type", new String[] { "application/json" })).bodyValue(requestbody).retrieve().bodyToMono(String.class).block();
+     return response;
     }
 
 }
