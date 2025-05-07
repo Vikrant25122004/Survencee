@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/feeds.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div id="navbar">
+            <div id="logo">
+                <h2>Survencee</h2>
+            </div>
+           <button id="post"> <i class="fa-solid fa-blog" style="color: #B197FC;"></i></button>
+        </div>
+        </header>
+        <main>
+            <div id="lside"></div>
+            <div class="six"th:each="survey : ${surveys}">
+
+                    <div id="user"> </div>
+                    <div id="texttr" >
+                        <p th:text="${survey.Surveys}"></p>
+                    </div>
+                    <div class="imgs">
+                        <div id="proofs" th:each="surv : ${survey.proofs}" >
+                            <img th:src="'data:image/jpeg;base64,' + ${surv}" alt="proofy"
+                            style="width: 100px; height: 100px; border-radius: 50%;">
+                            
+                        </div>
+
+                    </div>
+                    <div class="likess">
+                        <form th:action="@{/Reporter/likes}" method="post">
+                            <input type="hidden" name="id" th:value="${survey.id}"/>
+                            <input type="hidden" name="username" th:value="${Reporter.repoUsername}">
+                            <button type="submit">
+                                like (<span th:text="${survey.likes}">0</span>)
+                            </button>
+                        </form>
+                        Comment Textarea 
+                        <form th:action="@{/Reporter/comment}" method="post">
+                            <input type="hidden" name="id" th:value="${survey.id}"/>
+                            <input type="hidden" name="username" th:value="${Reporter.repoUsername}">
+                            <textarea name="comment" placeholder="Add a comment" rows="2" cols="30"></textarea>
+                            <button type="submit">Post Comment</button>
+                        </form>
+                        <div class="ai">
+                            <form th:action="@{/Reporter/make/report}" method="post">
+                                <input type="hidden" name="survey" th:value="'analyse the survey and make a efficient and knowledge able report on this survey which is understandable , and also give us the conclusions , problem and solution ' + ${survey.Surveys}">
+                                <button type="submit"><i class="fa-solid fa-hexagon-nodes fa-spin-pulse fa-2xl"></i></button>
+                            </form>
+                            
+                        </div>
+                    </div>
+
+                
+
+            </div>
+            <div id="rside"></div>
+        </main>
+
+
+</body>
+</html>

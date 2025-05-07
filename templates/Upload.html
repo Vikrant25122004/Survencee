@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" th:href="@{/css/Upload.css}">
+</head>
+<body>
+<div id="upload-page">
+    <h2 th:text="${username}"></h2>
+    <form  role="form" th:action="@{'/Surveyor/surve/' + ${username}}" method="post" enctype="multipart/form-data">
+        <select name="title" required>
+            <option value="Social">Social</option>
+            <option value="Political">Political</option>
+            <option value="Health">Health</option>
+            <option value="Technology">Technology</option>
+            <option value="Education">Education</option>
+            <option value="others">others</option>
+        </select>
+        <div id="tech" name="Surveys" contenteditable="true"></div>
+        <input type="hidden" name="Surveys" id="hiddenout"> 
+    
+    <label for="choose" class="custom-file-upload ">Proof</label>
+    <input type="file" name="proofs" multiple accept="image/*" id="choose" hidden><br/>
+    <button type="submit" onclick="document.getElementById('hiddenout').value = document.getElementById('tech').innerText;">Submit Survey</button>
+    </form>
+
+</div>
+
+</body>
+</html>

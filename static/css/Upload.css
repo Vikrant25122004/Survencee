@@ -1,0 +1,78 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    background-color:rgb(42,39,39);
+}
+#upload-page{
+    height: 500px;
+    width: 900px;
+    border-radius: 50px 50px 50px 50px;
+    background-color: rgb(42, 39 , 39);
+    position: relative;
+    top: 50px;
+    left: 170px;
+    border: 3px solid black;
+
+}
+button{
+    height: 40px;
+    width: 100px;
+    border:none;
+    border-radius: 50px 50px 50px 50px;
+    background-color: orangered;
+    position: relative;
+    left: 400px;
+    top: 40px;
+    
+}
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: orangered;
+    color: rgb(0, 0, 0);
+    border-radius: 50px 50px 50px 50px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    position: relative;
+    left:700px;
+    top: 50px;
+   
+}
+
+.custom-file-upload:hover {
+    background-color: orangered;
+
+}
+#survey{
+    height: 100px;
+    width: 100px;
+}
+#tech{
+    height: 300px;
+    width: 780px;
+    background-color: rgb(0, 0, 0);
+    position: relative;
+    left: 50px;
+    top: 40px;
+    color: aliceblue;
+    border: 50px 50px 50px 50px;
+}
+select{
+    position: relative;
+    top: 30px;
+    left: 50px;
+    background-color: orangered;
+    border-radius: 50px 50px 50px 50px;
+    height: 40px;
+
+}
+h2{
+    position: relative;
+    left: 30px;
+}
+form{
+    height: 300px;
+}

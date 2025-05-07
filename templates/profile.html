@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" th:href="@{/css/profile.css}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+   <header>
+  <div id="navbar">
+    <div id="logo">
+      <h2>Survencee</h2>
+    </div>
+    <div id="message"><i class="fa-solid fa-message"></i></div>
+    <a th:href="@{'/Surveyor/upload/surv/' + ${Surveyor.username}}" class="upload-link" title="upload-Survey">
+      <i class="fa-solid fa-arrow-up-from-bracket fa-flip" ></i>
+
+    </a>
+    <a th:href="@{/Surveyor/logout}" id="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+  </div>
+       </header>
+       <main>
+        <div id="lside">
+          <div id="picture">
+              <img th:if="${Surveyor.imgurl != null}"
+                   th:src="'data:image/jpeg;base64,' + ${Surveyor.imgurl}"
+                   alt="Profile Picture"
+                   style="width: 100px; height: 100px; border-radius: 50%;">
+
+              <img th:if="${Surveyor.imgurl == null}"
+                   src="https://static.vecteezy.com/system/resources/previews/021/548/095/non_2x/default-profile-picture-avatar-user-avatar-icon-person-icon-head-icon-profile-picture-icons-default-anonymous-user-male-and-female-businessman-photo-placeholder-social-network-avatar-portrait-free-vector.jpg"
+                   alt="Default Avatar"
+                   style="width: 100px; height: 100px; border-radius: 50%;">
+          </div>
+          <form th:action="@{/Surveyor/upload/profile}" method="post" enctype="multipart/form-data">
+          <label for="pic"><i class="fa-solid fa-pencil"></i></label>
+          <input type="file" id="pic" name="pic" accept="image/*">
+          <button type="submit" id="submit">Upload Image</button>
+          </form>
+          <pre>
+            <span class="label">Username :</span>
+            <span class="value" th:text="${Surveyor.username}"></span>
+          </pre>
+          <br>
+          <hr>
+          
+          <pre>
+            <span class="label">Name :</span>
+            <span class="value" th:text="${Surveyor.name}"></span>
+          </pre>
+          <br>
+          <hr>
+          
+          <pre>
+            <span class="label">Email :</span>
+            <span class="value" th:text="${Surveyor.email}"></span>
+          </pre>
+          <br>
+          <hr>
+          
+        </div>
+       <div id="rside" th:each="survey : ${Surveys}">
+        <a th:href="@{/Surveyor/profile}" class="cc">
+          <img th:if="${Surveyor.imgurl != null}"
+               th:src="'data:image/jpeg;base64,' + ${Surveyor.imgurl}"
+               alt="Profile Image"
+               class="cc"/>
+
+          <img th:if="${Surveyor.imgurl == null}"
+               src="https://example.com/default-avatar.jpg"
+               alt="Default Profile Image"
+               class="cc"/>
+      </a>
+      <a th:href="@{@{/Surveyor/profile}}" th:text="${survey.username}" id="us"></a>
+      <p id="titlr" th:text="${survey.title}"> </p>
+      <div id="textt">
+        <p th:text="${survey.Surveys}"></p>
+      </div>
+      
+        <p th:text="'Comments :' + ${survey.comment}" id="lol"></p>
+      
+    
+        <p th:text="'likes :' + ${survey.likes}" id="lik"></p>
+      
+      
+      
+
+       </div>
+       <br>
+       <br>      
+       </main>
+</body>
+</html>

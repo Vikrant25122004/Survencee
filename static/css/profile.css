@@ -1,0 +1,212 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+
+    background-color: rgb(42, 39, 39);
+
+    overflow-y: auto;
+}
+#navbar{
+    height: 60px;
+    width: 100%;
+    background-color: black;
+    position :sticky;
+    top: 0px;
+}
+#logo{
+    color: aliceblue;
+    font-size: larger;
+    font-style: italic;
+    font-family: cursive;
+    width: 220px;
+    position: relative;
+    left: 5px;
+    top: 3px;
+
+}
+#lside{
+    height: 100%;
+    width: 300px;
+    border-style: solid;
+    border-color: black;
+    border-top: none;
+    border-left: none;
+    border-bottom:none ;
+    border-width: 2px;
+    background-color: rgb(33, 32, 32);
+    position: fixed;
+    left: 0px;
+    top: 60px;
+}
+#picture {
+    width: 100px;
+    height: 100px;
+    background-color: aliceblue;
+    border-radius: 50%;
+    position: relative;
+    left: 100px;
+    top: 50px;
+    overflow: hidden;
+  }
+  
+  label[for="pic"] {
+    position: absolute;
+    left: 160px;
+    top: 120px;
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  label[for="pic"] i {
+    color: #f70808;
+    font-size: 14px;
+  }
+  
+  #pic {
+    display: none; /* completely hide the file input */
+  }
+  #submit{
+
+    height: 40px;
+    width: 100px;
+    border-radius: 50px 50px 50px 50px;
+    background-color: orangered;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    top: 65px;
+    left: 95px;
+  }
+  #submit:hover{
+    background-color: aqua;
+  }
+  #submit:active{
+    background-color: black;
+  }pre {
+    color: aliceblue;
+    font-weight: bolder;
+    position: relative;
+    top: 100px;
+    left: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 120px; /* adjusts based on hr position */
+  }
+  
+  .label {
+    flex: 0 0 auto;
+    text-align: left;
+  }
+  
+  .value {
+    position: absolute;
+    left: 90px; /* match the left of <hr> */
+    /* adjusts vertical alignment */
+    width: 150px; /* match <hr> width */
+    text-align: center;
+    color: lightgreen;
+  }
+  
+  hr {
+    position: relative;
+    top: 80px;
+    width: 150px;
+    left: 120px;
+  }
+  .upload-link{
+    position: relative;
+    left: 1070px;
+    bottom: 20px;
+    height: 50px;
+    width: 50px;
+    font-size:20px;
+    color: aliceblue;
+  }
+  #logout{
+    height: 10px;
+    width: 10px;
+    font-size: larger;
+    color: bisque;
+    position: relative;
+    left: 1100px;
+    bottom: 20px;
+  }
+ 
+  #rside{
+    height: 400px;
+    width: 700px;
+    background-color: blanchedalmond;
+    position:relative;
+    left: 400px;
+    top: 100px;
+    border-radius: 50px 50px 50px 50px;
+    margin-bottom: 40px; 
+    
+  }
+  .cc{
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    position: relative;
+    left: 20px;
+    top: 10px;
+  }
+  #textt{
+    height: 300px;
+    width: 500px;
+    background-color: rgb(23, 21, 21);
+    color: antiquewhite;
+    overflow-y: auto;
+    position: relative;
+    left: 80px;
+  
+  }
+  #lol{
+    position: relative;
+    left: 80px;
+  
+    width: 200px;
+    word-wrap: break-word;
+  }
+  #lik{
+    width: 200px;
+    word-wrap: break-word;
+    position: relative;
+    left: 180px;
+    bottom: 18px;
+  }
+  #view{
+    position: relative;
+    left: 250px;
+    bottom: 35px;
+    width: 200px;
+    word-wrap: break-word;
+  }
+  #us{
+    position: relative;
+    left: 50px;
+  }
+  #titlr{
+    position: relative;
+    bottom: 10px;
+    left: 200px;
+    width: 200px;
+  }
+  #message{
+    color: aliceblue;;
+    height: 17.33px;
+    width: 16px;
+    position: relative;
+    left: 800px;
+    bottom: 20px;
+  }
